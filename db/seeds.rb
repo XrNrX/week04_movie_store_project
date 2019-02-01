@@ -30,3 +30,67 @@ customer4 = Customer.new({
   "age" => "7"
   })
   customer4.save()
+
+movie1 = Movie.new({
+  "name" => "Lord of the Rings",
+  "certificate" => "PG",
+  "url" => "/images/lotr.jpg"
+  })
+
+movie1.save()
+
+movie2 = Movie.new({
+  "name" => "Aliens",
+  "certificate" => "18",
+  "url" => "/images/aliens.jpg"
+  })
+
+movie2.save()
+
+movie3 = Movie.new({
+  "name" => "Big Trouble in Little China",
+  "certificate" => "15",
+  "url" => "/images/big_trouble.jpg"
+  })
+
+movie3.save()
+
+movie4 = Movie.new({
+  "name" => "Crouching Tiger, Hidden Dragon",
+  "certificate" => "12",
+  "url" => "/images/crouching_tiger.jpg"
+  })
+
+movie4.save()
+
+movie5 = Movie.new({
+  "name" => "The Terminator",
+  "certificate" => "18",
+  "url" => "/images/the_terminator.jpg"
+  })
+
+movie5.save()
+
+movie6 = Movie.new({
+  "name" => "The Matrix",
+  "certificate" => "15",
+  "url" => "/images/the_matrix.jpg"
+  })
+
+movie6.save()
+
+movie7 = Movie.new({
+  "name" => "Predator",
+  "certificate" => "18",
+  "url" => "/images/predator.jpg"
+  })
+
+movie7.save()
+
+movie8 = Movie.new({
+  "name" => "Ong-Bak",
+  "certificate" => "18",
+  "url" => "/images/ong_bak.jpg"
+  })
+
+movie8.save()

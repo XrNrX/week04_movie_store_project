@@ -12,7 +12,7 @@ CREATE TABLE customers (
 CREATE TABLE movies (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  certificate INT4,
+  certificate VARCHAR(255),
   url VARCHAR(255)
 );
 
