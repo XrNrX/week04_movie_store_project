@@ -3,6 +3,10 @@ require_relative("../models/Movie")
 require_relative("../models/Rental")
 require("pry")
 
+Rental.delete_all()
+Customer.delete_all()
+Movie.delete_all()
+
 customer1 = Customer.new({
   "name" => "Stuart",
   "address" => "22C An Average Street",
