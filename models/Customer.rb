@@ -2,7 +2,7 @@ require_relative("../db/sql_runner")
 
 class Customer
 
-attr_accessor( :name, :address, :age)
+attr_accessor( :name, :address, :age, :id )
 
 def initialize(options)
   @name = options["name"]
@@ -20,6 +20,12 @@ def save()
   values = [@name, @address, @age]
   results = SqlRunner.run(sql, values)
   @id = results.first()["id"].to_i
+end
+
+def self.all()
+  sql = "SELECT * FROM customers"
+  results = SqlRunner.run(sql)
+  return results.map { |customer| Customer.new(customer) }
 end
 
 end

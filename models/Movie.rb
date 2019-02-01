@@ -1,6 +1,6 @@
 class Movie
 
-attr_accessor( :name, :certificate, :id)
+attr_accessor( :name, :certificate, :id )
 
 def initialize(options)
   @name = options["name"]
@@ -17,6 +17,12 @@ def save()
   values = [@name, @certificate]
   results = SqlRunner.run(sql, values)
   @id = results.first["id"].to_i
+end
+
+def self.all()
+  sql = "SELECT * FROM movies"
+  results = SqlRunner.run(sql)
+  return results.map { |movie| Movie.new(movie) }
 end
 
 

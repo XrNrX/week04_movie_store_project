@@ -7,7 +7,7 @@ customer1 = Customer.new({
   "name" => "Stuart",
   "address" => "22C An Average Street",
   "age" => "33",
-})
+  })
 customer1.save()
 
 customer2 = Customer.new({
@@ -94,3 +94,34 @@ movie8 = Movie.new({
   })
 
 movie8.save()
+
+rental1 = Rental.new({
+  "movie_id" => movie3.id,
+  "customer_id" => customer1.id
+  })
+
+rental1.save()
+
+rental2 = Rental.new({
+  "movie_id" => movie5.id,
+  "customer_id" => customer2.id
+  })
+
+rental2.save()
+
+rental3 = Rental.new({
+  "movie_id" => movie1.id,
+  "customer_id" => customer3.id
+  })
+
+rental3.save()
+
+rental4 = Rental.new({
+  "movie_id" => movie8.id,
+  "customer_id" => customer4.id
+  })
+
+rental4.save()
+
+binding.pry
+nil
