@@ -28,7 +28,6 @@ post "/movies" do
 end
 
 post '/movies/:id/delete' do
-  # binding.pry
   movie = Movie.find_id(params[:id])
   movie.delete()
   redirect to("/movies")

@@ -19,13 +19,17 @@ a:hover {
   color: brown;
 }
 
+a {
+
+}
+
 h1 {
 color: purple;
 margin: 10px;
 }
 
 h2 {
-color: darkkhaki;
+color: blueviolet;
 font-family: inherit;
 text-align: center;
 margin: 3px;
@@ -74,7 +78,7 @@ border-color: #6395bd;
 
 .btn {
   font-family: 'VT323', monospace;
-  background: darkolivegreen;
+  background: olivedrab;
 	border-bottom: 6px inset rgba(0,0,0,.5);
 	border-left: 6px inset rgba(0,0,0,.5);
 	border-right: 6px inset rgba(255,255,255,.5);
@@ -89,7 +93,7 @@ border-color: #6395bd;
 }
 .bigger-btn {
   font-family: 'VT323', monospace;
-  background: darkolivegreen;
+  background: olivedrab;
 	border-bottom: 6px inset rgba(0,0,0,.5);
 	border-left: 6px inset rgba(0,0,0,.5);
 	border-right: 6px inset rgba(255,255,255,.5);
@@ -103,8 +107,19 @@ border-color: #6395bd;
   width: 180px;
 }
 
+.sum-style {
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+  width: 33%;
+  background-color: lightskyblue;
+}
+
 .flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }

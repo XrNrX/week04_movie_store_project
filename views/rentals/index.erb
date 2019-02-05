@@ -1,13 +1,13 @@
 <h1>CURRENT RENTALS</h1>
 
-<div class="rentals">
+<div class="flex-container">
     <% @rentals.each do |rental| %>
-    <div class="rentals">
+    <div class="sum-style">
       <p>Customer: <%= rental.customer.name %></p>
       <p>Title: <%= rental.movie.name %></p>
-    </div>
     <form action="/rentals/<%= rental.id %>/delete" method="post">
       <input class="btn" type="submit" value="Remove Rental">
     </form>
+    </div>
     <% end %>
 </div>
