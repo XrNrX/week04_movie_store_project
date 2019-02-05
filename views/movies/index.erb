@@ -1,0 +1,16 @@
+<h1>IN STORE</h1>
+
+<div>
+  <% @movies.each do |movie| %>
+  <div class="flex-container">
+    <h2><%= movie.name %></h2>
+    <p>Name: <%= movie.name %></p>
+    <p>Certificate: <%= movie.certificate %></p>
+    <div class="movies">
+      <form action="/movies/<%= movie.id %>/delete" method="post">
+        <input class="bigger-btn" type="submit" value="Remove from Stock">
+      </form>
+    </div>
+    <% end %>
+  </div>
+</div>

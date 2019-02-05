@@ -1,3 +1,5 @@
+require_relative("../db/sql_runner")
+
 class Rental
 
   attr_accessor( :customer_id, :movie_id, :id )
@@ -41,14 +43,36 @@ def self.delete_all()
   SqlRunner.run(sql)
 end
 
-def find_id(id)
-  sql = "SELECT FROM rentals
+def self.find_id(id)
+  sql = "SELECT * FROM rentals
   WHERE id = $1"
   values = [id]
   results = SqlRunner.run(sql, values)
   return Rental.new(results.first)
 end
 
+def movie()
+  sql = "SELECT * FROM movies
+  WHERE id = $1"
+  values = [@movie_id]
+  movies = SqlRunner.run(sql, values)
+  return Movie.new(movies.first)
+end
+
+def delete()
+  sql = "DELETE FROM rentals
+  WHERE id = $1"
+  values = [@id]
+  SqlRunner.run(sql, values)
+end
+
+def customer()
+    sql = "SELECT * FROM Customers
+    WHERE id = $1"
+    values = [@customer_id]
+    customers = SqlRunner.run(sql, values).first
+    return Customer.new(customers)
+end
 
 
 end

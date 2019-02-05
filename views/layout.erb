@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Store</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+
+</head>
+<body>
+  <nav id="main-nav">
+    <ul>
+      <li> <a href="/">Home</a></li>
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="/customers">Customers</a></li>
+        <li><a href="/rentals/new">Assign Movie to Customer</a></li>
+        <li><a href="/customers/show">New Customer</a></li>
+        <li><a href="/movies/show">New Movie</a></li>
+        <li><a href="/rentals">Current Rentals</a></li>
+    </ul>
+  </nav>
+  <%= yield %>
+</body>
+</html>

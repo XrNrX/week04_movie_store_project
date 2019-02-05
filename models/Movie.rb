@@ -1,3 +1,5 @@
+require_relative("../db/sql_runner")
+
 class Movie
 
 attr_accessor( :name, :certificate, :id, :url )
@@ -35,7 +37,7 @@ def self.all()
   return results.map { |movie| Movie.new(movie) }
 end
 
-def delete()
+def delete
   sql = "DELETE FROM movies
   WHERE id = $1"
   values = [@id]
@@ -48,14 +50,21 @@ def self.delete_all()
 end
 
 def self.find_id(id)
-  sql = "SELECT FROM movies
+  sql = "SELECT * FROM movies
   WHERE id = $1"
   values = [id]
   results = SqlRunner.run(sql, values)
   return Movie.new(results.first)
 end
 
-
-
+def customer()
+  sql = "SELECT customers.*
+  FROM customers INNER JOIN rentals
+  ON rentals.customer_id = customers.id
+  WHERE movie_id = $1"
+  values = [@id]
+  customer = SqlRunner.run(sql, values)
+  return customer.map { |customer| Customer.new(customer) }
+end
 
 end

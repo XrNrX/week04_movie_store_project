@@ -1,0 +1,13 @@
+<h1>CURRENT RENTALS</h1>
+
+<div class="rentals">
+    <% @rentals.each do |rental| %>
+    <div class="rentals">
+      <p>Customer: <%= rental.customer.name %></p>
+      <p>Title: <%= rental.movie.name %></p>
+    </div>
+    <form action="/rentals/<%= rental.id %>/delete" method="post">
+      <input class="btn" type="submit" value="Remove Rental">
+    </form>
+    <% end %>
+</div>

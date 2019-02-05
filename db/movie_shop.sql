@@ -19,6 +19,6 @@ CREATE TABLE movies (
 
 CREATE TABLE rentals (
   id SERIAL8 PRIMARY KEY,
-  movie_id INT8 REFERENCES movies(id),
-  customer_id INT8 REFERENCES customers(id)
+  movie_id INT8 REFERENCES movies(id) ON DELETE CASCADE,
+  customer_id INT8 REFERENCES customers(id) ON DELETE CASCADE
 );
