@@ -74,5 +74,4 @@ def customer()
     return Customer.new(customers)
 end
 
-
 end

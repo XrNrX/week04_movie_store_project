@@ -57,7 +57,7 @@ class Customer
     return Customer.new(results.first)
   end
 
-  def movies()
+  def movie()
     sql = "SELECT movies.*
     FROM movies INNER JOIN rentals
     ON rentals.movie_id = movies.id
@@ -65,16 +65,6 @@ class Customer
     values = [@id]
     movies = SqlRunner.run(sql, values)
     return movies.map { |movie| Movie.new(movie)}
-  end
-
-  def rentals()
-    sql = "SELECT customers.*, rentals.* FROM customers
-    LEFT JOIN rentals
-    ON customers.id = rentals.customer_id
-    WHERE movie_id = $1"
-    values = [@id]
-    rentals = SqlRunner.run(sql, values)
-    return rentals.map { |rental| Rental.new(rental) }
   end
 
   def fix_name()
